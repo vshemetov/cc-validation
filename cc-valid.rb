@@ -22,25 +22,25 @@ class CreditCard
 
   # Luhn validation
   def self.valid? card_number
-	sum = 0
-	d = 0
+	  sum = 0
+	  d = 0
 
-	sequence = card_number.to_s
-	if sequence.size.even?
-		s = 0
+	  sequence = card_number.to_s
+	  if sequence.size.even?
+		  s = 0
     else
     	s = 1
     	sum += sequence[0].to_i
     end
 
-	(s..sequence.size - 1).step(2) {|i|
-		sum += sequence[i + 1].to_i
-		d = sequence[i].to_i * 2
-		d -= 9 if d > 9
-		sum += d
-	}
+	  (s..sequence.size - 1).step(2) {|i|
+		  sum += sequence[i + 1].to_i
+		  d = sequence[i].to_i * 2
+		  d -= 9 if d > 9
+		  sum += d
+	  }
 
-	sum % 10 == 0
+	  sum % 10 == 0
   end
 
 end
