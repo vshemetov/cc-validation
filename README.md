@@ -1,2 +1,4 @@
-# cc-validation
-# cc-validation
+#Credit card validation script.
+
+#Using
+`ruby cc-validation.rb [card nuber]`
