@@ -29,7 +29,7 @@ class CreditCard
     if sequence.size.even?
       s = 0
     else
-    s = 1
+      s = 1
       sum += sequence[0].to_i
     end
 
