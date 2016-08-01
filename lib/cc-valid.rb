@@ -22,10 +22,14 @@ class CreditCard
 
   # Luhn validation
   def self.valid? card_number
+
     sum = 0
     d = 0
 
     sequence = card_number.to_s
+    if card_number.to_i <= 0 || sequence.size < 13
+      return false
+    end
     if sequence.size.even?
       s = 0
     else
